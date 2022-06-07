@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Enums
 {
-	internal enum Colors
+	internal enum Colors // Available colors for vehicles
 	{
 		Blue,
 		Red,
