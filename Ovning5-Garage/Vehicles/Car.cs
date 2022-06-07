@@ -14,7 +14,7 @@ namespace Ovning5_Garage.Vehicles
 
 		public override string ToString()
 		{
-			return base.ToString() + $", Bränsletype: {FuelType}";
+			return base.ToString() + $",      Bränsletype: {FuelType}"; // Add fuel type to string output
 		}
 	}
 }

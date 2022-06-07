@@ -15,7 +15,7 @@ namespace Ovning5_Garage.Vehicles
 
 		public override string ToString()
 		{
-			return base.ToString() + $", Cylindervolym: {CylinderVolume}";
+			return base.ToString() + $",      Cylindervolym: {CylinderVolume}"; // Add cylinder volume to string output
 		}
 	}
 }

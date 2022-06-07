@@ -14,7 +14,7 @@ namespace Ovning5_Garage.Vehicles
 
 		public override string ToString()
 		{
-			return base.ToString() + $", Antal sitsar: {NumberOfSeats}";
+			return base.ToString() + $",      Antal sitsar: {NumberOfSeats}"; // Add nr of seats to string output
 		}
 
 	}

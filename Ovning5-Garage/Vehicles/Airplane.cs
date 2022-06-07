@@ -14,7 +14,7 @@ namespace Ovning5_Garage.Vehicles
 
 		public override string ToString()
 		{
-			return base.ToString() + $", Antal motorer: {NumberOfEngines}";
+			return base.ToString() + $",      Antal motorer: {NumberOfEngines}"; // Add nr of engines to string output
 		}
 	}
 }

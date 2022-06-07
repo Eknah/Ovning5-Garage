@@ -20,7 +20,7 @@ namespace Ovning5_Garage.Vehicles
 				var valueUpper = value.ToUpper();
 				if (RegisteredRegNumbers.Contains(valueUpper))
 				{
-					throw new ArgumentException("Registreringsnumret är redan registrerat för ett annat fordon.");
+					throw new ArgumentException("Reg.numret är redan registrerat för ett befintligt fordon.");
 				}
 
 				RegisteredRegNumbers.Add(valueUpper);
@@ -37,6 +37,7 @@ namespace Ovning5_Garage.Vehicles
 			RegNumber = regNumber;
 		}
 
-		public override string ToString() => $"Typ: {Name}, Färg: {Color}, Antal hjul: {NumberOfWheels}, Reg.Nr: {regNumber}";
+		// Base string output shared for all vehicles
+		public override string ToString() => $"Typ: {Name},       \tFärg: {Color}, \tAntal hjul: {NumberOfWheels}, \tReg.Nr: {regNumber}";
 	}
 }
