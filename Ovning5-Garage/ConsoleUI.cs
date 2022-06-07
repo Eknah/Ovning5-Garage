@@ -7,24 +7,24 @@ namespace Ovning5_Garage
 
 		public string ReadString() => Console.ReadLine() ?? String.Empty;
 
-		internal ConsoleKey ReadKey()
+		internal ConsoleKey ReadKey() // Read single key
 		{
 			var key = Console.ReadKey().Key;
 			Console.WriteLine("\n");
 			return key;
 		}
 
-		internal int ReadInt()
+		internal int ReadInt() // Read int input safely
 		{
 			var input = ReadString();
 
 			if (int.TryParse(input, out int result))
 				return result;
-			else
+			else // Input not an int
 				throw new ArgumentException("Det angivna värdet var inte ett heltal.");
 		}
 
-		internal Colors ReadColor()
+		internal Colors ReadColor() // Select from a set a predefined colors safely
 		{
 			Print("1) Blå");
 			Print("2) Röd");
@@ -49,12 +49,12 @@ namespace Ovning5_Garage
 					return Colors.White;
 				case ConsoleKey.D6:
 					return Colors.Black;
-				default:
+				default: // Invalid input
 					throw new ArgumentException("Felaktigt färgval.");
 			}
 		}
 
-		internal FuelTypes ReadFuelType()
+		internal FuelTypes ReadFuelType() // Select from a set a predefined fuel types safely
 		{
 			Print("1) Bensin");
 			Print("2) Diesel");
@@ -67,18 +67,18 @@ namespace Ovning5_Garage
 					return FuelTypes.Gasoline;
 				case ConsoleKey.D2:
 					return FuelTypes.Diesel;
-				default:
+				default: // Invalid input
 					throw new ArgumentException("Felaktigt färgval.");
 			}
 		}
 
-		internal double ReadDouble()
+		internal double ReadDouble() // Read double input safely
 		{
 			var input = ReadString();
 
 			if (double.TryParse(input, out double result))
 				return result;
-			else
+			else // Input not a double
 				throw new ArgumentException("Det angivna värdet var inte ett decimaltal.");
 		}
 	}
