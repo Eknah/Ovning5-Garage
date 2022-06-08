@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Vehicles
 {
-	internal class Boat : Vehicle 
+	public class Boat : Vehicle 
 	{
 
 		public double Length { get; }

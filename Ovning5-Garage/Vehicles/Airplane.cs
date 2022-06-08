@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Vehicles
 {
-	internal class Airplane : Vehicle
+	public class Airplane : Vehicle
 	{
 
 		public int NumberOfEngines { get; }

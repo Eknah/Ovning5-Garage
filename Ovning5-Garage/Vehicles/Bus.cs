@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Vehicles
 {
-	internal class Bus : Vehicle 
+	public class Bus : Vehicle 
 	{
 
 		public int NumberOfSeats { get; }

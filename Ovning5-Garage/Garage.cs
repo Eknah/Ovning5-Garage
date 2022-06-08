@@ -1,13 +1,20 @@
 ﻿
 namespace Ovning5_Garage
 {
-	internal class Garage<T> : IEnumerable<T> where T : IVehicle
+	public class Garage<T> : IEnumerable<T> where T : IVehicle
 	{
 
 		private T?[] entries;
 
+		public int Capacity => entries.Length;
+
 		public Garage(int capacity)
 		{
+			if (capacity <= 0)
+			{
+				throw new ArgumentException("Fordonskapaciteten måste vara ett värde över 0.");
+			}
+
 			entries = new T[capacity];
 		}
 
@@ -20,7 +27,7 @@ namespace Ovning5_Garage
 
 		IEnumerator IEnumerable.GetEnumerator() => GetEnumerator(); // Old un-generic IEnumerable function
 
-		internal bool AddVehicle(T newVehicle)
+		public bool AddVehicle(T newVehicle)
 		{
 			bool isFull = entries.All(e => e != null); // Check if all elements are assigned to
 
@@ -34,7 +41,7 @@ namespace Ovning5_Garage
 			return true; // Add vehicle success
 		}
 
-		internal void RemoveVehicle(T vehicle)
+		public void RemoveVehicle(T vehicle)
 		{
 			var vehicleToRemoveIndex = entries.ToList().IndexOf(vehicle);
 

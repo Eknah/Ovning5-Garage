@@ -384,10 +384,6 @@ namespace Ovning5_Garage
 				ui.Print(ioex.Message);
 			}
 
-
-
-
-
 		}
 
 		private void createNewGarage()

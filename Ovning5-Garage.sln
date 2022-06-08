@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ovning5-Garage", "Ovning5-Garage\Ovning5-Garage.csproj", "{03609208-F2E2-41E9-A368-3EDAAB944C34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ovning5-Garage", "Ovning5-Garage\Ovning5-Garage.csproj", "{03609208-F2E2-41E9-A368-3EDAAB944C34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ovning5-Garage.Tests", "Ovning5-Garage.Tests\Ovning5-Garage.Tests.csproj", "{B31429DE-26F0-44ED-B260-6CF4D83A0F76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{03609208-F2E2-41E9-A368-3EDAAB944C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03609208-F2E2-41E9-A368-3EDAAB944C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03609208-F2E2-41E9-A368-3EDAAB944C34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31429DE-26F0-44ED-B260-6CF4D83A0F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31429DE-26F0-44ED-B260-6CF4D83A0F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31429DE-26F0-44ED-B260-6CF4D83A0F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31429DE-26F0-44ED-B260-6CF4D83A0F76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Vehicles
 {
-	internal class Motorcycle : Vehicle
+	public class Motorcycle : Vehicle
 	{
 
 		public double CylinderVolume { get; }

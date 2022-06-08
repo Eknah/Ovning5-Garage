@@ -1,6 +1,6 @@
 ﻿namespace Ovning5_Garage.Vehicles
 {
-	internal interface IVehicle
+	public interface IVehicle
 	{
 		Colors Color { get; }
 		string Name { get; }

@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Vehicles
 {
-	internal class Car : Vehicle 
+	public class Car : Vehicle 
 	{
 
 		public FuelTypes FuelType { get; }
