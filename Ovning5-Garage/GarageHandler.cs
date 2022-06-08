@@ -1,25 +1,26 @@
 ﻿
 namespace Ovning5_Garage
 {
-	internal class GarageHandler // Functions as a layer between the Garage and the UI
+	internal class GarageHandler : IHandler
+	// Functions as a layer between the Garage and the UI
 	{
-		private ConsoleUI ui; // Provides abstract functionality for in and outdata handling
-		private bool applicationRunning;
+		private IUI ui; // Provides abstract functionality for in and outdata handling
+		private bool appRunning;
 		private Garage<Vehicle>? garage = null; // Is null until user manually creates a new garage
 
-		public GarageHandler(ConsoleUI ui)
+		public GarageHandler(IUI ui)
 		{
 			this.ui = ui;
 		}
 
-		internal void Start()
+		public void Start()
 		{
 			ui.Print("Garage 1.0\n" +
 					 "==========");
 
-			applicationRunning = true;
+			appRunning = true;
 
-			while (applicationRunning)
+			while (appRunning)
 			{
 				drawMainMenu();
 				getCommand();
@@ -128,7 +129,7 @@ namespace Ovning5_Garage
 			{
 
 				if (garage is null)
-					throw new InvalidOperationException("Garage-objektet är ej skapat.");
+					throw new InvalidOperationException("Kan ej parkera fordon, Garage-objektet är ej skapat.");
 
 				ui.Print("\nAnge fordonstyp:");
 				ui.Print($"{((char)MenuHelper.VehicleAirplane)}) Flygplan");
@@ -435,7 +436,7 @@ namespace Ovning5_Garage
 		private void quit()
 		{
 			ui.Print("Avslutar program.");
-			applicationRunning = false;
+			appRunning = false;
 		}
 	}
 }

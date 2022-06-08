@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage.Vehicles
 {
-	internal abstract class Vehicle
+	internal abstract class Vehicle : IVehicle
 	{
 		public Colors Color { get; }
 		public int NumberOfWheels { get; } = 0;

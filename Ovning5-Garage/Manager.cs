@@ -5,8 +5,8 @@ namespace Ovning5_Garage
 	{
 		internal void StartApplication()
 		{
-			ConsoleUI ui = new();
-			GarageHandler garageHandler = new(ui);
+			IUI ui = new ConsoleUI();
+			IHandler garageHandler = new GarageHandler(ui);
 			garageHandler.Start();
 		}
 	}

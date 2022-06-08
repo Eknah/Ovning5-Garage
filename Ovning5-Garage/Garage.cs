@@ -1,7 +1,7 @@
 ﻿
 namespace Ovning5_Garage
 {
-	internal class Garage<T> : IEnumerable<T> where T : Vehicle
+	internal class Garage<T> : IEnumerable<T> where T : IVehicle
 	{
 
 		private T?[] entries;
@@ -40,7 +40,7 @@ namespace Ovning5_Garage
 
 			if (vehicleToRemoveIndex != -1)
 			{ 
-				entries[vehicleToRemoveIndex] = null;
+				entries[vehicleToRemoveIndex] = default(T);
 			}
 		}
 	}

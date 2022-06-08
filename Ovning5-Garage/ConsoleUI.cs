@@ -1,20 +1,20 @@
 ﻿
 namespace Ovning5_Garage
 {
-	internal class ConsoleUI
+	internal class ConsoleUI : IUI
 	{
 		public void Print(string text) => Console.WriteLine(text);
 
 		public string ReadString() => Console.ReadLine() ?? String.Empty;
 
-		internal ConsoleKey ReadKey() // Read single key
+		public ConsoleKey ReadKey() // Read single key
 		{
 			var key = Console.ReadKey().Key;
 			Console.WriteLine("\n");
 			return key;
 		}
 
-		internal int ReadInt() // Read int input safely
+		public int ReadInt() // Read int input safely
 		{
 			var input = ReadString();
 
@@ -24,7 +24,7 @@ namespace Ovning5_Garage
 				throw new ArgumentException("Det angivna värdet var inte ett heltal.");
 		}
 
-		internal Colors ReadColor() // Select from a set a predefined colors safely
+		public Colors ReadColor() // Select from a set a predefined colors safely
 		{
 			Print("1) Blå");
 			Print("2) Röd");
@@ -54,7 +54,7 @@ namespace Ovning5_Garage
 			}
 		}
 
-		internal FuelTypes ReadFuelType() // Select from a set a predefined fuel types safely
+		public FuelTypes ReadFuelType() // Select from a set a predefined fuel types safely
 		{
 			Print("1) Bensin");
 			Print("2) Diesel");
@@ -72,7 +72,7 @@ namespace Ovning5_Garage
 			}
 		}
 
-		internal double ReadDouble() // Read double input safely
+		public double ReadDouble() // Read double input safely
 		{
 			var input = ReadString();
 
