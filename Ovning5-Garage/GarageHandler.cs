@@ -6,7 +6,7 @@ namespace Ovning5_Garage
 	{
 		private IUI ui; // Provides abstract functionality for in and outdata handling
 		private bool appRunning;
-		private Garage<Vehicle>? garage = null; // Is null until user manually creates a new garage
+		private Garage<IVehicle>? garage = null; // Is null until user manually creates a new garage
 
 		public GarageHandler(IUI ui)
 		{
@@ -111,7 +111,7 @@ namespace Ovning5_Garage
 
 				ui.Print($"Antal fordon: {garage.Count()} st\n");
 
-				foreach (Vehicle v in garage)
+				foreach (IVehicle v in garage)
 					ui.Print(v.ToString());
 			}
 			catch (InvalidOperationException ioex)
@@ -140,7 +140,7 @@ namespace Ovning5_Garage
 
 				var vehicleType = ui.ReadKey();
 
-				Vehicle? vehicle = null;
+				IVehicle? vehicle = null;
 
 				switch (vehicleType)
 				{
@@ -254,7 +254,7 @@ namespace Ovning5_Garage
 			}
 		}
 
-		private Vehicle? searchVehicleWithRegNr()
+		private IVehicle? searchVehicleWithRegNr()
 		{
 			ui.Print("Ange reg.nummer:");
 			var regNumber = ui.ReadString();
@@ -346,21 +346,21 @@ namespace Ovning5_Garage
 						case ConsoleKey.D4:
 							{
 								//Func<Vehicle, bool> searchCondition = new(v => true);
-								Func<Vehicle, bool> searchCondition = new(v => true);
+								Func<IVehicle, bool> searchCondition = new(v => true);
 
 								if (color != null)
-									searchCondition = searchCondition.AndAlso<Vehicle>(v => v.Color == color);
+									searchCondition = searchCondition.AndAlso<IVehicle>(v => v.Color == color);
 
 								if (numberOfWheels != null)
-									searchCondition = searchCondition.AndAlso<Vehicle>(v => v.NumberOfWheels == numberOfWheels);
+									searchCondition = searchCondition.AndAlso<IVehicle>(v => v.NumberOfWheels == numberOfWheels);
 
 								if (vehicleType != null)
-									searchCondition = searchCondition.AndAlso<Vehicle>(v => v.Name == vehicleType);
+									searchCondition = searchCondition.AndAlso<IVehicle>(v => v.Name == vehicleType);
 
 								var results = garage.Where(v => searchCondition.Invoke(v));
 
 								ui.Print("Sökresultat:");
-								foreach (Vehicle v in results)
+								foreach (IVehicle v in results)
 									ui.Print(v.ToString());
 
 								break;
@@ -399,12 +399,12 @@ namespace Ovning5_Garage
 			try
 			{
 				var capacity = ui.ReadInt();
-				garage = new Garage<Vehicle>(capacity);
+				garage = new Garage<IVehicle>(capacity);
 				ui.Print($"Garage skapat med kapaciteten {capacity}.");
 				ui.Print("Ange antal fordon att populera garaget med från start (0 för inga):");
 				var populateAmount = ui.ReadInt();
 
-				var populationData = new List<Vehicle>()
+				var populationData = new List<IVehicle>()
 				{
 					new Airplane(Colors.Green, 3, "HJK654", 2),
 					new Boat(Colors.Red, 0, "IFJ533", 3),
