@@ -1,7 +1,7 @@
 
 namespace Ovning5_Garage.Tests
 {
-	public class GarageTest
+	public class GarageTest // Test ctor and available methods of the Garage class
 	{
 		[Fact]
 		public void GarageCtor_ValidCapacity_ExpectedBehaviour()

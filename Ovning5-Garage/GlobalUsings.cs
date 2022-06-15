@@ -1,8 +1,8 @@
-﻿global using System;
+﻿// Global usings used throughout the project
+
+global using System;
 global using System.Collections.Generic;
 global using System.Linq;
-global using System.Text;
-global using System.Threading.Tasks;
 global using System.Collections;
 global using Ovning5_Garage.Vehicles;
 global using Ovning5_Garage.Enums;
